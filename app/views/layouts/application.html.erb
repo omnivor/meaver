@@ -1,15 +1,24 @@
 <!DOCTYPE html>
+<!--
+  Massively by Pixelarity
+  pixelarity.com | hello@pixelarity.com
+  License: pixelarity.com/license
+-->
 <html>
   <head>
-    <title>Mevaer</title>
+    <title>Mevaer Camp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <%= stylesheet_link_tag 'font-awesome.min', 'main', 'noscript', 'application' %>
+
+    <%= javascript_include_tag 'jquery.min', 'jquery.scrollex.min', 'jquery.scrolly.min', 'browser.min', 'breakpoints.min', 'util', 'main' %>
   </head>
 
-  <body>
+  <body class="is-preload">
+    <%= render 'home/header' %>
     <%= yield %>
   </body>
 </html>
