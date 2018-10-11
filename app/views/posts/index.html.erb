@@ -5,12 +5,12 @@
   
 
       <% @posts.each do |post| %>
-      <div class="box">
+        <div class="box">
         
           <%= link_to image_tag(post.image.url(:medium)), post %></br>
           <%= link_to 'Edit', edit_post_path(post) %></br>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></br>
-          </div>
+          <%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></br>
+        </div>
       <% end %>
       
 
