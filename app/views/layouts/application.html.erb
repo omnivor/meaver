@@ -12,12 +12,15 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <%= stylesheet_link_tag 'font-awesome.min', 'main', 'noscript', 'application' %>
+    <%= stylesheet_link_tag 'font-awesome.min', 'main', 'noscript', 'application', :media => "all" %>
 
     <%= javascript_include_tag 'application', 'jquery.min', 'jquery.scrollex.min', 'jquery.scrolly.min', 'browser.min', 'breakpoints.min', 'util', 'main' %>
   </head>
 
   <body class="is-preload">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+    <% end %>
     <%= render 'home/header' %>
 
     <%= yield %>
