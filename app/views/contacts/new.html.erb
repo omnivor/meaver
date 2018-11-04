@@ -3,27 +3,26 @@
     <section>
       <h2 class="page_title">Have You a question?</h2>
 			<p> Write to us! </p>
-
-			
+      
 			<div class="skinny_wrapper wrapper_padding">
-			<%= form_for @contact do |f| %>
-				<%= f.label :name %>
-				<%= f.text_field :name, required: true %>
+    		<%= form_for @contact do |f| %>
+    			<%= f.label :name %>
+    			<%= f.text_field :name, required: true %>
 
-				<br>
+    			<br>
 
-				<%= f.label :email %>
-				<%= f.email_field :email, required: true %>
+    			<%= f.label :email %>
+    			<%= f.email_field :email, required: true %>
 
-				<br>
+    			<br>
 
-				<%= f.label :message %>
-				<%= f.text_area :message, as: :text %>
+    			<%= f.label :message %>
+    			<%= f.text_area :message, as: :text %>
 
-				<br>
+    			<br>
 
-				<%= f.submit 'Send Message', class: "button" %>
-			<% end %>
+    			<%= f.submit 'Send Message', class: 'button primary small' %>
+    		<% end %>
 			</div>
     </section>
     <section class="split contact">
@@ -42,12 +41,7 @@
         <p><a href="#">mevaercamp@gmail.com</a></p>
       </section>
       <section>
-        <h3>Social</h3>
-        <ul class="icons alt">
-          <li><%= link_to '', "https://www.facebook.com/Mevaer-Camp-304291830126407/", class: "icon alt fa-facebook" %></li>
-          <li><%= link_to '', "https://web.facebook.com/profile.php?id=100000924437112", class: "icon alt fa-instagram" %></li>
-          <li><%= link_to '', "https://www.youtube.com/channel/UClm3zvzYNqeVwpzFGsDUOkg", class: "icon alt fa-youtube" %></li>
-        </ul>
+        
       </section>
     </section>
   </footer>

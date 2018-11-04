@@ -1,21 +1,20 @@
 <div id="main">
-
-  <h1>Gallery</h1>
   <div id="posts" class="transitions-enabled">
-  
-
-      <% @posts.each do |post| %>
-        <div class="box">
-        
-          <%= link_to image_tag(post.image.url(:medium)), post %></br>
-          <%= link_to 'Edit', edit_post_path(post) %></br>
-          <%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></br>
+    <h1>Gallery</h1>
+    <% @posts.each do |post| %>
+      <div class="box alt">
+        <div class="row gtr-50 gtr-uniform">
+          <div class="col-4">
+            <span class="image fit">
+              <%= link_to image_tag(post.image.url(:medium)), post %>
+              <%= link_to 'Edit', edit_post_path(post), class: 'button primary small' %>
+              <%= link_to 'Delete', post, class: 'button small', method: :delete, data: { confirm: "Are you sure?"} %>
+            </span>
+          </div>
         </div>
-      <% end %>
-      
-
-  <br>
-
-  <%= link_to 'New Post', new_post_path %>
-</div>
+      </div>
+    <% end %>
+    <br>
+    <%= link_to 'New Post', new_post_path, class: 'button primary small' %>
+  </div>
 </div>
