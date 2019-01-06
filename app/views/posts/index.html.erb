@@ -6,15 +6,21 @@
         <div class="row gtr-50 gtr-uniform">
           <div class="col-4">
             <span class="image fit">
-              <%= link_to image_tag(post.image.url(:medium)), post %>
-              <%= link_to 'Edit', edit_post_path(post), class: 'button primary small' %>
-              <%= link_to 'Delete', post, class: 'button small', method: :delete, data: { confirm: "Are you sure?"} %>
+              <% if admin_signed_in? %>
+                <%= link_to image_tag(post.image.url(:medium)), post %>
+                <%= link_to 'Edit', edit_post_path(post), class: 'button primary small' %>
+                <%= link_to 'Delete', post, class: 'button small', method: :delete, data: { confirm: "Are you sure?"} %>
+              <% else %>
+                <%= image_tag(post.image.url(:medium)) %>
+              <% end %>
             </span>
           </div>
         </div>
       </div>
     <% end %>
     <br>
-    <%= link_to 'New Post', new_post_path, class: 'button primary small' %>
+    <% if admin_signed_in? %>
+      <%= link_to 'New Post', new_post_path, class: 'button primary small' %>
+    <% end %>
   </div>
 </div>

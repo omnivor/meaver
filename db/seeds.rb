@@ -6,11 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create(
-    :name => "My Name",
+admin = Admin.create(
     :email => "mevaercamp@gmail.com",
     :password => "Kaszanka50",
     :password_confirmation => "Kaszanka50"
 )
-admin.toggle!(:admin)
+
 # I assume "admin.update_attribute(:admin, true)" would work as well.
